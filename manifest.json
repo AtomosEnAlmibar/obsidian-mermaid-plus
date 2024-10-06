@@ -1,9 +1,9 @@
 {
-	"id": "mermaid-viewer-plugin",
-	"name": "Mermaid Viewer Plugin",
-	"version": "1.0.0",
+	"id": "mermaid-plus-plugin",
+	"name": "Mermaid Plus",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
+	"description": "Adds new functionalities to the Mermaid diagrams",
 	"author": "Obsidian",
 	"authorUrl": "https://obsidian.md",
 	"fundingUrl": "https://obsidian.md/pricing",

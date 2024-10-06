@@ -68,7 +68,7 @@ export default class MyPlugin extends Plugin {
 
 		const container = document.createElement('div');
 
-		container.style.overflowX = 'auto';
+		container.style.overflow = 'auto';
 		container.innerHTML = `<div class="mermaid-plus" style="width:${diagram.attributes.width};height:${diagram.attributes.height}">${diagram.body}</div>`;
 
 		el.appendChild(container);
@@ -98,10 +98,6 @@ export default class MyPlugin extends Plugin {
 		this.addSettingTab(new SampleSettingTab(this.app, this));
 	}
 
-	onunload() {
-
-	}
-
 	async loadSettings() {
 		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
 	}
@@ -126,9 +122,8 @@ class SampleSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Default theme')
-			.setDesc('The theme that the Mermaid diagrams will appear')
+			.setDesc('Theme that will be used in the Mermaid diagrams')
 			.addDropdown(dropdown => {
-
 				DEFAULT_THEMES.forEach((value, key) => {
 					dropdown.addOption(key, value);
 				})
