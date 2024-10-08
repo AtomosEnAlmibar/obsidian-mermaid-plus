@@ -2,7 +2,7 @@
 	"id": "mermaid-plus",
 	"name": "Mermaid Plus",
 	"version": "1.0.1",
-	"minAppVersion": "0.15.0",
+	"minAppVersion": "1.0.1",
 	"description": "Adds new functionalities to the Mermaid diagrams",
 	"author": "AtomosEnAlmibar",
 	"isDesktopOnly": false
