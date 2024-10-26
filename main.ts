@@ -62,19 +62,24 @@ export default class MyPlugin extends Plugin {
 	async processMermaidHTML(source: string, el: HTMLElement) {
 
 		let diagram: Diagram = this.parseInputToTheme(source);
+		console.log("bruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuh")
 		if (diagram.body == '') {
 			return null;
 		}
 
-		const container = document.createElement('div');
 
-		container.style.overflow = 'auto';
-		container.innerHTML = `<div class="mermaid-plus" style="width:${diagram.attributes.width};height:${diagram.attributes.height}">${diagram.body}</div>`;
+		const mermaidContainer = el.createDiv({ cls: "mermaid-container" });
+		const mermaidDiagramContainer = mermaidContainer.createDiv({ text: diagram.body, cls: "mermaid-plus, mermaid-diagram" });
+		console.log("lo nueov container", mermaidContainer)
+		// const container = document.createElement('div');
 
-		el.appendChild(container);
+		// container.style.overflow = 'auto';
+		// container.innerHTML = `<div class="mermaid-plus" style="width:${diagram.attributes.width};height:${diagram.attributes.height}">${diagram.body}</div>`;
+
+		// el.appendChild(container);
 		const initializeMermaid = () => {
 			if ((window as any).mermaid) {
-				const mermaidDiagram = container.querySelector('.mermaid-plus');
+				const mermaidDiagram = mermaidDiagramContainer.querySelector('.mermaid-plus');
 				const mermaidConfig = {
 					theme: this.settings.theme,
 				};
